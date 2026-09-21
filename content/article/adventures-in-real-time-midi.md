@@ -13,13 +13,13 @@
 Preamble
 --------
 
-Since discovering Perl [real-time MIDI]({{< mcpan "MIDI::RtMidi::FFI::Device" >}}) and [writing about creating async drums](/article/making-an-asynchronous-clocking-drum-machine-in-perl/) with it, I've dug deeper into what's possible. I have a few [music](https://metacpan.org/search?size=20&q=music) and [midi](https://metacpan.org/search?size=20&q=midi) modules on the cpan, and like to put them to use in real-time, now that I have been enlightened by zen master [John Barrett](https://metacpan.org/author/JBARRETT). Ha :D
+Since discovering Perl [real-time MIDI]({{< mcpan "MIDI::RtMidi::FFI::Device" >}}) and [writing about creating async drums](/article/making-an-asynchronous-clocking-drum-machine-in-perl/) with it, I've dug deeper into what's possible. I have a few [music](https://metacpan.org/search?size=20&q=music) and [midi](https://metacpan.org/search?size=20&q=midi) modules on the cpan  and like to put them to use in real-time, now that I have been enlightened by zen master [John Barrett](https://metacpan.org/author/JBARRETT). Ha :D
 
 This will be a mostly commented-code illustration of real-time arpeggiation. It is maybe "just a hobby." But the principles of asynchronous, periodic execution of a set of things, are generically applicable to other types of problems.
 
 There is no perplexing music theory here; just some terms to know. A *note* is a little vector of a *pitch* (high or low) and a *duration* (long or short). A *scale* is a collection of pitches, starting at the *tonic*. An *octave* is the musical interval between one note and another, where each has the same letter name but twice (or half) its *frequency* (in Hertz). A *clock* is a *MIDI* message sent to a device to keep timing. MIDI stands for "musical instrument digital interface" and is the beating heart of a lot of digital music. An *arpeggio* is a musical *phrase* (collection) of notes with differing sort orders. An arpeggio is played over a given spread or range of *beat* durations. A beat is an atom of the *rhythm*. The rhythm is the collection of note durations of a phrase. Four beats make up a common *measure* of musical time. And a measure is a group of beats - most commonly four. Finally, the term *velocity* is equivalent to the volume or loudness of a note. Whew!
 
-Anyway, on with the show! (And [audio examples](#audio-examples) are at the bottom.)
+Anyway, on with the show. (And [audio examples](#audio-examples) are at the bottom.)
 
 Broad strokes
 -------------
@@ -31,7 +31,7 @@ A generative arpeggiator that runs forever, choosing random scale notes, and ran
 **The core ideas:**
 
 * A universe of notes defined by a tonic pitch, a scale name, and a set of octaves
-* An asynchronous clock engine using a periodic timer to drive the events and MIDI messaging
+* An asynchronous clock engine using a periodic timer to drive events and MIDI messaging
 * Phrase generation with flexible arpeggio parameters and velocity randomization
 * Graceful shutdown
 
@@ -257,7 +257,7 @@ This is the General MIDI piano played with [fluidsynth](https://www.fluidsynth.o
 
 Not terribly exciting, yet.
 
-These were recorded with my [microKORG](https://www.korg.com/us/products/synthesizers/microkorg/) synthesizer. But any MIDI capable synth will do!
+The following were recorded with my [microKORG](https://www.korg.com/us/products/synthesizers/microkorg/) synthesizer. But any MIDI capable synth will do!
 
 This one sounds like an arcade. It repeats the arp twice:
 
@@ -275,7 +275,9 @@ Ok. How about an ethereal pad arping in slow motion?
 
 {{< audio src="/media/adventures-in-real-time-midi/example-3.mp3" type="audio/mpeg" >}}
 
-Here is an example of the verbose console output that is produced:
+~
+
+And here is an example of the verbose console output that is produced:
 
 ```shell
 > perl perl.com/arpeggios.pl
