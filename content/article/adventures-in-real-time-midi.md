@@ -346,4 +346,4 @@ Resources
 * [Music::Scales]({{< mcpan "Music::Scales" >}})
 * The code for this article: [arpeggios.pl](https://github.com/ology/Music/blob/master/perl.com/arpeggios.pl)
 * The more complete and musical version: [arping.pl](https://github.com/ology/Music/blob/master/arping.pl)
-* My personal music can be found at https://geneboggs.bandcamp.com/ and https://www.youtube.com/@GeneBoggs
+* My original music is at https://geneboggs.bandcamp.com/ and https://www.youtube.com/@GeneBoggs
