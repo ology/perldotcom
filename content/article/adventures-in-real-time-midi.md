@@ -26,7 +26,7 @@ Broad strokes
 
 **What this is:**
 
-A generative arpeggiator that runs forever, choosing random scale notes, and random arpeggios. This plays them on a MIDI synth, all driven by an internal clock.
+A generative arpeggiator that runs forever, choosing random scale notes, and random arpeggios. This plays them on a MIDI synth, all driven by a MIDI clock.
 
 **The core ideas:**
 
