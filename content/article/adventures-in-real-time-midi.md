@@ -210,6 +210,7 @@ sub trigger_notes {
     } @$arped;
 
     my $scale = 1; # default multiplier: 1 = no rescaling
+
     if ($opt{spread}) {
         # total unscaled duration of the arp
         my $raw_total = sum0(@raw_ticks) || 1;
@@ -246,7 +247,7 @@ sub velocity ($min, $max, $offset) {
 }
 ```
 
-A superior implementation would use the [Getopt::Long]({{< mcpan "Getopt::Long" >}}) module to parse command-line arguments.
+A superior implementation would use the [Getopt::Long]({{< mcpan "Getopt::Long" >}}) module to parse command-line arguments. Hint, hint. ;)
 
 Audio examples
 --------------
